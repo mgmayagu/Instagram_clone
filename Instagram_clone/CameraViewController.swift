@@ -2,15 +2,15 @@
 //  CameraViewController.swift
 //  Instagram_clone
 //
-//  Created by Michael Mayaguari on 3/20/21.
+//  Created by Michael Mayaguari on 3/25/21.
 //
 
 import UIKit
 import AlamofireImage
 import Parse
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var commentField: UITextField!
     
@@ -21,10 +21,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onSubmitButton(_ sender: Any) {
-        
         let post = PFObject(className: "Posts")
         
-        post["caption"] = PFUser.current()!
+        post["caption"] = commentField.text
+        post["author"] = PFUser.current()
         
         let imageData = imageView.image!.pngData()
         let file = PFFileObject(name: "image.png", data: imageData!)
@@ -38,7 +38,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             } else {
                 print("error!")
             }
-            
         }
     }
     
@@ -59,11 +58,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
         
-        let size =  CGSize(width: 300, height: 300)
+        let size = CGSize(width: 300, height: 300)
         let scaledImage = image.af.imageScaled(to: size)
-         
-        imageView.image = scaledImage
         
+        imageView.image = scaledImage
         dismiss(animated: true, completion: nil)
     }
     /*

@@ -148,7 +148,7 @@
                     <navigationItem key="navigationItem" id="dFK-bJ-y7l">
                         <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="OnA-KI-r4F">
                             <connections>
-                                <segue destination="PAy-tW-LZ1" kind="presentation" id="1ad-qM-Vp0"/>
+                                <segue destination="4T9-en-IO7" kind="presentation" id="wbZ-qc-9Wc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -161,64 +161,55 @@
             <point key="canvasLocation" x="1642.0289855072465" y="59.598214285714285"/>
         </scene>
         <!--Camera View Controller-->
-        <scene sceneID="kFs-Hr-Xoz">
+        <scene sceneID="DPo-dG-8cF">
             <objects>
-                <viewController id="PAy-tW-LZ1" customClass="CameraViewController" customModule="Instagram_clone" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cwD-SD-7ck">
+                <viewController id="4T9-en-IO7" customClass="CameraViewController" customModule="Instagram_clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nwa-k9-CWL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LkI-kB-8XD">
-                                <rect key="frame" x="20" y="51" width="374" height="351"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Zkf-KR-hOg">
+                                <rect key="frame" x="20" y="20" width="374" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="yV4-ws-GBX" appends="YES" id="DiQ-FS-a7M"/>
+                                    <outletCollection property="gestureRecognizers" destination="zK0-q2-Yhn" appends="YES" id="ZAL-UG-60b"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eDt-wB-HFI">
-                                <rect key="frame" x="20" y="438" width="374" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQy-xP-Dic">
+                                <rect key="frame" x="20" y="428" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1a-ei-Bsm">
-                                <rect key="frame" x="123" y="491" width="144" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Submit">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ku-uk-T5d">
+                                <rect key="frame" x="20" y="482" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="SUBMIT">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSubmitButton:" destination="PAy-tW-LZ1" eventType="touchUpInside" id="e8H-u5-uMI"/>
+                                    <action selector="onSubmitButton:" destination="4T9-en-IO7" eventType="touchUpInside" id="g67-qh-r5P"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="AYf-sN-6gO"/>
+                        <viewLayoutGuide key="safeArea" id="KP0-GC-Xrz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="eDt-wB-HFI" firstAttribute="leading" secondItem="LkI-kB-8XD" secondAttribute="leading" id="0oz-N7-oYz"/>
-                            <constraint firstItem="eDt-wB-HFI" firstAttribute="trailing" secondItem="LkI-kB-8XD" secondAttribute="trailing" id="332-BX-Y7p"/>
-                            <constraint firstItem="eDt-wB-HFI" firstAttribute="trailing" secondItem="cwD-SD-7ck" secondAttribute="trailingMargin" id="G9H-4Y-BtW"/>
-                            <constraint firstItem="eDt-wB-HFI" firstAttribute="leading" secondItem="cwD-SD-7ck" secondAttribute="leadingMargin" id="M1U-5G-X2y"/>
-                            <constraint firstItem="k1a-ei-Bsm" firstAttribute="top" secondItem="eDt-wB-HFI" secondAttribute="bottom" constant="19" id="Ms8-8b-JSu"/>
-                            <constraint firstItem="eDt-wB-HFI" firstAttribute="top" secondItem="LkI-kB-8XD" secondAttribute="bottom" constant="36" id="djc-K5-iHQ"/>
-                            <constraint firstItem="AYf-sN-6gO" firstAttribute="trailing" secondItem="k1a-ei-Bsm" secondAttribute="trailing" constant="147" id="hHt-Bw-V9G"/>
-                            <constraint firstItem="AYf-sN-6gO" firstAttribute="bottom" secondItem="k1a-ei-Bsm" secondAttribute="bottom" constant="275" id="iPH-W9-WLN"/>
-                            <constraint firstItem="k1a-ei-Bsm" firstAttribute="leading" secondItem="AYf-sN-6gO" secondAttribute="leading" constant="123" id="iTP-Py-fXA"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="commentField" destination="eDt-wB-HFI" id="o1e-Dp-3yT"/>
-                        <outlet property="imageView" destination="LkI-kB-8XD" id="DXE-cW-fUz"/>
-                        <outlet property="onCameraButton" destination="LkI-kB-8XD" id="P55-f0-BF0"/>
+                        <outlet property="commentField" destination="rQy-xP-Dic" id="hxU-YG-Gdh"/>
+                        <outlet property="imageView" destination="Zkf-KR-hOg" id="K40-B3-HGi"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I3u-Oh-egm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="yV4-ws-GBX">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6IV-0W-5ha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zK0-q2-Yhn">
                     <connections>
-                        <action selector="onCameraButton:" destination="PAy-tW-LZ1" id="oUx-OY-M7Q"/>
+                        <action selector="onCameraButton:" destination="4T9-en-IO7" id="8DP-Ob-2fC"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2347.826086956522" y="67.633928571428569"/>
+            <point key="canvasLocation" x="2362.3188405797105" y="57.589285714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="36w-z2-hfS">
